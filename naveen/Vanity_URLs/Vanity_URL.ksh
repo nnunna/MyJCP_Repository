@@ -9,16 +9,16 @@ TSTAMP=$DATE"_"$USER
 
 propogate()
 {
-	echo -e "\e[0;32m Taking back up of previous redirect_rules directory under "$mac":/usr/wls/apache2/redirect_rules_$TSTAMP" 
+	echo -e "\e[0;32m Taking back up of previous redirect_rules directory under "$mac":/usr/wls/apache2/redirect_rules_$TSTAMP \e[0m" 
 	ssh -q $mac -n "cd /usr/wls/apache2/; cp -r redirect_rules redirect_rules_$TSTAMP"
-	echo -e "\e[1;33m Transferring files from Chef Server to "$mac":/usr/wls/apache2/redirect_rules"
+	echo -e "\e[1;33m Transferring files from Chef Server to "$mac":/usr/wls/apache2/redirect_rules \e[0m"
 	scp -q -p /mediamnt/templateFiles/ohs/dt/redirect_rules/dtpr1/*.txt $mac:/usr/wls/apache2/redirect_rules
-	echo -e "\e[0;32m File transfer compelted!!!"
+	echo -e "\e[0;32m File transfer compelted!!! \e[0m"
 	for conf in $(ssh -q $mac -n "ps -ef | grep httpd | awk 'FS=\" -f \" {print \$NF}'| awk '{print \$1}'| grep conf | sort -u | grep -v start")
 	do
-		echo -e "\e[0;31m Gracefully bouncing webserver `echo $conf | awk -F/ '{print $(NF-1)}'`"	
+		echo -e "\e[0;31m Gracefully bouncing webserver `echo $conf | awk -F/ '{print $(NF-1)}'` \e[0m"
 		ssh -q $mac -n "/usr/wls/apache2/bin/apachectl -k graceful -f $conf"
-		echo -e "\e[0;32m \t\t ===> Successful!!"
+		echo -e "\e[0;32m \t\t ===> Successful!! \e[0m"
 	done
 }
 
@@ -31,7 +31,7 @@ validate()
 				echo "Will run only for the servers starting with $dc for $pid"
 				propogate
 			else
-				echo -e "\e[0;31m Not Running for $mac"
+				echo -e "\e[0;31m Not Running for $mac \e[0m"
 			fi
 		else
 			propogate

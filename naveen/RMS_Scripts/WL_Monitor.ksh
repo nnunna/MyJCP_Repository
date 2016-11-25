@@ -2,8 +2,8 @@
 
 set -xvf
 ####### Variables #########
-#EMAIL='SE-WAS-ADMIN-dl@jcp.com,OracleRMS-EnvironmentTeam-dl@jcp.com'
-EMAIL=nnunna@jcp.com
+EMAIL='SE-WAS-ADMIN-dl@jcp.com,OracleRMS-EnvironmentTeam-dl@jcp.com'
+#EMAIL=nnunna@jcp.com
 CONFIG=/root/naveen/RMS_Scripts/conf/servers_list.txt
 WL_STATUS_REPORT=/root/naveen/RMS_Scripts/tmp/wl_status.html
 STATUS=/root/naveen/RMS_Scripts/tmp/netstats.txt

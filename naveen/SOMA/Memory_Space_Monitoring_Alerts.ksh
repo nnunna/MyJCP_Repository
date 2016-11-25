@@ -2,7 +2,8 @@
 
 ####### Variables #########
 #EMAIL=SE-WAS-ADMIN-dl@jcp.com
-EMAIL='Sterling-DOM-dl@jcp.com,SE-WAS-ADMIN-dl@jcp.com'
+#EMAIL='Sterling-DOM-dl@jcp.com,SE-WAS-ADMIN-dl@jcp.com'
+EMAIL='jkim11@jcp.com,rranjan4@contractor.jcp.com,mbalu@contractor.jcp.com,asadovsk@jcp.com,kpnguyen@jcp.com,mrwhite@jcp.com,SE-WAS-ADMIN-dl@jcp.com'
 TEMP=/tmp
 DISK_SPACE_ALERT_THRESHOLD=78
 MEMORY_THRESHOLD=80
