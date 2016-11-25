@@ -1,0 +1,10 @@
+cd /mediamnt/templateFiles/ohs/dt/redirect_rules
+rm -rf *
+scp -prd lenldtwbsp1s01:/tmp/redirect_rules/* .
+for server in lenldtwbsp1s01 lenldtwbsp1s02 colldtwbsp1s01 colldtwbsp1s02;  
+do    
+	echo -e '\n\n #*************************************** START *****************************************#';    
+	echo -e '\n'$i'. Server: ' $server '\n\a';    
+	ssh $server chef-client;    
+	echo -e '\n\n #**************************************** END ******************************************#';  
+done
