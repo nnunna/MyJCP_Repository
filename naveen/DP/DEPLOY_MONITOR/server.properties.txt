@@ -1,5 +1,0 @@
-admin.url= http://colldtwlspr1p01.jcpenney.com:7001
-admin.username=weblogic		
-admin.password=topcat12
-server.name=colldtwlspr1p01
-domain.name=dtadepr1_domain
